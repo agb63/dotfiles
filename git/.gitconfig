@@ -1,0 +1,38 @@
+[user]
+	email = baconbits23@gmail.com
+	name = Allison Bianchi
+[diff]
+    tool = xxdiff
+    prompt = false
+    orderfile = /home/allisonb/.gitorder
+[difftool]
+    prompt = false
+    orderfile = /home/allisonb/.gitorder
+[merge]
+    tool = xxdiff
+[core]
+    editor = gvim -f
+[alias]
+    lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+    lg3 = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    ; lg4 = log --oneline --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(12,trunc)%al%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    ; lg5 = log --oneline --graph --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(12,trunc)%al%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    lg = !"git lg1"
+    hist = !"git lg1"
+    line = log --oneline --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(10,trunc)%al%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    linet = log --oneline --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(10,trunc)%al%C(reset) %C(bold green)%ar%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    graph = log --oneline --graph --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(10,trunc)%al%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    grapht = log --oneline --graph --pretty=format:'%C(bold blue)%h%C(reset) %C(dim white)%>(10,trunc)%al%C(reset) %C(bold green)%ar%C(reset) %C(white)%<(60,trunc)%s %C(auto)%d' --date=short
+    st = status
+    dt = difftool -O /home/allisonb/.gitorder
+    dts = difftool --staged -O /home/allisonb/.gitorder
+[cola]
+    spellcheck = false
+[init]
+    defaultBranch = main
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
