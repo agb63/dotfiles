@@ -27,6 +27,8 @@
     st = status
     dt = difftool -O /home/allisonb/.gitorder
     dts = difftool --staged -O /home/allisonb/.gitorder
+    files = log --oneline --name-only
+    filestat = log --oneline --name-status
 [cola]
     spellcheck = false
 [init]
